@@ -1,0 +1,31 @@
+{% extends 'recommend/base.html'%}
+
+{% block title %}{{user.username}}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <p style="text-align:left;">
+    <span style="float:right;">
+        <a href="{% url 'follow_list' %}" class="btn"><button style="color:#fff;background-color:#4CAF50;padding:10px">Follow</button></a>
+    </span>
+    </p>
+    <div class="row">
+        <div class="col-md-2">
+            <img src="https://via.placeholder.com/150" alt="{{ user.username }}">
+        </div>
+        <div>
+            <label>Name</label>
+            <div style="color: #ffffff; margin-bottom: 2em;">{{user.username}}</div>
+        </div>
+        <div>
+            <label>E-mail</label>
+            <div style="color: #ffffff;">{{user.email}}</div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button>
+            Back
+        </button>
+    </div>
+</div>
+{% endblock %}

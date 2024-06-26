@@ -14,7 +14,7 @@ class Movie(models.Model):
         return self.title
 
 
-class Myrating(models.Model):
+class MyRating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     rating = models.IntegerField(default=0, validators=[MaxValueValidator(5), MinValueValidator(0)])
@@ -23,3 +23,7 @@ class MyList(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     watch = models.BooleanField(default=False)
+
+class FollowList(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    Following = models.IntegerField(default=0)
